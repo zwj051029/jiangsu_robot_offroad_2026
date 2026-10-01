@@ -24,3 +24,4 @@ if ($LASTEXITCODE -ne 0) { throw "Host test build failed: $LASTEXITCODE" }
 if ($LASTEXITCODE -ne 0) { throw "Host tests failed: $LASTEXITCODE" }
 & (Join-Path $PSScriptRoot 'Run-GrayOledTests.ps1') -Compiler $Compiler `
     -CCompiler ($Compiler -replace 'g\+\+(\.exe)?$', 'gcc$1')
+& (Join-Path $PSScriptRoot 'Run-LineFollowTests.ps1') -Compiler $Compiler

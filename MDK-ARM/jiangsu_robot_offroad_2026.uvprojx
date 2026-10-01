@@ -714,6 +714,11 @@
               <FileType>1</FileType>
               <FilePath>../FrameComponets/Bsps/Src/bsp_uart.c</FilePath>
             </File>
+            <File>
+              <FileName>bsp_oled_bus.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../FrameComponets/Bsps/Src/bsp_oled_bus.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -753,6 +758,16 @@
               <FileName>ultrasonic.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../FrameComponets/Mods/Src/ultrasonic.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>gray_yahboom_8lp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../FrameComponets/Mods/Src/gray_yahboom_8lp.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>oled_factory.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../FrameComponets/Mods/Src/oled_factory.cpp</FilePath>
             </File>
           </Files>
         </Group>
@@ -803,6 +818,31 @@
               <FileName>OffroadApp.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../FrameComponets/Apps/Src/OffroadApp.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>LineFollowApp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../FrameComponets/Apps/Src/LineFollowApp.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>LineFollowBoard.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../FrameComponets/Apps/Src/LineFollowBoard.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>MotorSpeedDisplay.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../FrameComponets/Apps/Src/MotorSpeedDisplay.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>SpeedMixer.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../FrameComponets/Apps/Src/SpeedMixer.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Track.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../FrameComponets/Apps/Src/Track.cpp</FilePath>
             </File>
           </Files>
         </Group>

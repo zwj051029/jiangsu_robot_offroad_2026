@@ -1,6 +1,7 @@
 #include "MainFrame.hpp"
 #include "bsp_motor_board.h"
 #include "MotorSpeedProfiles.hpp"
+#include "LineFollowBoard.hpp"
 
 MotorPwmDriver Motor1Driver, Motor2Driver, Motor3Driver, Motor4Driver;
 DcMotor Motor1, Motor2, Motor3, Motor4;
@@ -61,6 +62,14 @@ namespace
                 return false;
             }
         }
+        if (LineFollowBoard::Enabled)
+        {
+            LineFollowApp::Config config;
+            if (!LineFollowBoard::InitGray(GrayArray) || !LineFollow.Init(config))
+            {
+                return false;
+            }
+        }
         // 已实测方向；四轮配置前进 PI 后仍保持禁能，只有应用可显式使能。
         // 传感器负责人在这里补充各自驱动绑定。
         // RangeSensor.Bind(...);
@@ -102,7 +111,9 @@ void MainFrameCpp()
         System.Stop(true);
         return;
     }
-    if (!System.RegistApp(Offroad))
+    Application &app = LineFollowBoard::Enabled ? static_cast<Application &>(LineFollow)
+                                                : static_cast<Application &>(Offroad);
+    if (!System.RegistApp(app))
     {
         System.Stop(true);
     }

@@ -3,6 +3,7 @@
 #include "StateCore.hpp"
 #include "Action.hpp"
 #include "MainFrame.hpp"
+#include "LineFollowBoard.hpp"
 #include "bsp_dwt.h"
 #include "cmsis_os.h"
 
@@ -28,8 +29,19 @@ void FrameTickCpp(void)
             Action.ExecutorRun();
         }
     }
-    Offroad.Control();
+    if (LineFollowBoard::Enabled)
+    {
+        LineFollow.Control();
+    }
+    else
+    {
+        Offroad.Control();
+    }
     DcMotor::ControlAllMotors();
+    if (LineFollowBoard::Enabled)
+    {
+        LineFollow.UpdateDisplay();
+    }
 }
 
 void RobotSystemCpp(void)
